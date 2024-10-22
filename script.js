@@ -1,85 +1,53 @@
-function fun1(){
-    let a=10;
-    let b=20;
-    // function fun2(){
-    return () => {   //arrow function
-        let c=40;
-        // function fun3(){
-        return () => {
-            return a+b+c;
-        }
-        return fun3;
-        // return a+b;
-    }
-    // return fun2;
-}
-// console.log(fun1());
-// console.log(fun1()()());
-let returnFun=fun1();
-// console.log(returnFun());
-
-//------------------------------------------------------------------------------//
-let person={
-    name:"Devika",
-    age:20,
-    education:"btech"
-};
-
-for(let idx in person){
-    // console.log(person[idx]);
-}
-//object is not iterable so for of cannot be applied
-// for(let idx of person){
-//     console.log(person[idx]);
+console.log("hello");
+// function waitSec(){
+//     let curr_time=new Date().getTime();
+//     let fut_time=curr_time+1000;
+//     while(new Date().getTime()<fut_time);
 // }
-
+// function waitNSec(n){
+//     for(let i=0;i<n;i++){
+//         waitSec();
+//     }
+// }
+// waitNSec(6);
+//-----------------------------------------------------------------------------//
+setTimeout(()=>{
+    // console.log("inside setTimeout");
+    
+},5000)
 //------------------------------------------------------------------------------//
-//map
-let arr=[1,2,3,4,5,6];
-function mymap(item){
-return item*3;
+let id=setInterval(() => {
+    // console.log("data is fetched");
+    
+}, 1000);
+
+// setInterval(()=>{
+//     clearInterval(id);
+// },8000)
+// console.log("world");
+// ----------------------------------------------------------------------------//
+let student=(function IIFE(){
+    let marks=90;
+    function student(){
+        details();
+    }
+    function details() {
+        console.log(`percentage: ${(marks/100)*100}`);
+    }
+    return student;
+})()
+student();
+
+
+// ((a,b)=>{
+//     console.log(`SUM OF a & b ${a+b}`);
+// })(10,15)
+
+function placeOrder(){
+    setTimeout(()=>{
+        console.log("order placed");
+        fg();
+    }
 }
-
-let newArr=arr.map(function mymap(item){
-    return item*3;
-    });
-let newArr1 = arr.map(item => item*5);
-// console.log(newArr);
-//------------------------------------------------------------------------------//
-//filter
-let filteredArr=arr.filter(item => (item%2!=0));
-// console.log(filteredArr);
-
-//------------------------------------------------------------------------------//
-//reduce
-let reducedArr=arr.reduce((acc,currValue) => {acc=acc+currValue;return acc;},0);
-// console.log(reducedArr);
-
-//------------------------------------------------------------------------------//
-//for each(does not return a new array)
-let newArr2=arr.forEach((item)=>item*2);
-console.log(newArr2);
-
-//------------------------------------------------------------------------------//
-//Given an array of numbers,filter out the even numbers then double the value of
-//remaining numbers & then calculate their sum.
-
-let arr1=[15,19,20,22,18,13,16,11];
-let filteredArr1=arr1.filter(item=>(item%2!=0));
-let mappedArr=filteredArr1.map(item=>item*2);
-let sum=mappedArr.reduce((acc,currValue) => {acc=acc+currValue;return acc;},0)
-console.log(sum);
-
-
-
-
-
-
-
-
-
-
-
-
 
 
