@@ -1,37 +1,35 @@
-// let name="devika"
-// let char='x'
-// console.log(typeof(char))
+let arr=[2,3,4,5,6];
+// let arr1=arr;
+let arr1=[7,8,9,10,11];
+let arr2=[...arr,...arr1];//spread operator,rest,arrow
+arr1.push("hello")
+// let arr2=arr.slice(0);
+let arr3=arr.concat(arr1);
+console.log(arr);
+// console.log(arr1);
+// console.log(arr2);
+console.log(arr3);
 
-// let salary;
-// console.log(typeof(salary))
-
-// let id=null;
-// console.log(typeof(id))
-
-// let value=BigInt("1213212432432432")
-// console.log(typeof(value))
-
-const arr=[1,'abcde',true,null,undefined,[]];
-arr[5].push(3);//insert element at end
-arr.pop()////delete element from end
-arr.unshift("hello");//insert element from start
-arr.shift()//delete element from start
-// arr.slice(start idx,end idx)
-// let newArr=arr.slice(2);
-// console.log(newArr)
-// console.log(arr)
-// splice changes the original array while slice does not
-// end index is included in splice while not in slice
-let new1=arr.splice(2,4);
-console.log(new1);
-console.log(arr)
-let s;
-for(let i=0;i<arr.length;i++){
-    s=arr.indexOf(null);
+let person={
+    fullname:"abcde",
+    age:23,
+    salary:343534,
+    id:233,
+    projectdetail:{
+        projectId:123,
+        projectTitle:"Code js"
+    }
 }
-for(let i in arr){
-    console.log(i);
+console.log(person);
+console.log(person.age);//object chaining
+console.log(person["age"]);
+for(let key in person){
+    console.log(key);
 }
-for(let idx in arr){
-    console.log(arr[idx]);
+
+for(let key in person){
+    console.log(person[key]);
+}
+for(let key in person){
+    console.log(person.key);
 }
